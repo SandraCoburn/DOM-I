@@ -43,21 +43,22 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Navigation Bar
 let navigationBar = document.querySelectorAll("a");
-navigationBar[0].textContent = siteContent["nav"]["nav-item-1"];
-navigationBar[1].textContent = siteContent["nav"]["nav-item-2"];
-navigationBar[2].textContent = siteContent["nav"]["nav-item-3"];
-navigationBar[3].textContent = siteContent["nav"]["nav-item-4"];
-navigationBar[4].textContent = siteContent["nav"]["nav-item-5"];
-navigationBar[5].textContent = siteContent["nav"]["nav-item-6"];
+navigationBar.forEach((element, i) => {
+  element.textContent = siteContent["nav"][`nav-item-${[i]}`];
+})
 
 const newLink = document.createElement('a');
 newLink.textContent = "End";
+newLink.style.color = "green";
+newLink.style.cursor = "pointer";
 
 const parentElement = document.querySelector("nav");
 parentElement.appendChild(newLink);
 
 const newLink2 = document.createElement('a');
 newLink2.textContent = "Start";
+newLink2.style.color = "green";
+newLink2.style.cursor = "pointer";
 
 const parentElement2 = document.querySelector("nav");
 parentElement2.prepend(newLink2);
