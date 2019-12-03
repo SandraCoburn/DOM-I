@@ -51,6 +51,7 @@ const newLink = document.createElement('a');
 newLink.textContent = "End";
 newLink.style.color = "green";
 newLink.style.cursor = "pointer";
+newLink.style.backgroundColor = "lightblue";
 
 const parentElement = document.querySelector("nav");
 parentElement.appendChild(newLink);
@@ -59,12 +60,14 @@ const newLink2 = document.createElement('a');
 newLink2.textContent = "Start";
 newLink2.style.color = "green";
 newLink2.style.cursor = "pointer";
+newLink2.style.backgroundColor = "lightblue";
 
 const parentElement2 = document.querySelector("nav");
 parentElement2.prepend(newLink2);
 
 navigationBar.forEach(element => {
   element.style.color = 'green';
+  element.style.backgroundColor = "lightblue";
 });
 
 //Body
@@ -87,6 +90,10 @@ topContent[3].textContent = siteContent["main-content"]["product-h4"];
 topContent[4].textContent = siteContent["main-content"]["vision-h4"];
 topContent[5].textContent = siteContent["contact"]["contact-h4"];
 
+topContent.forEach(element => {
+  element.style.color = "green";
+});
+
 let mainImg = document.getElementById("middle-img");
 mainImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
@@ -104,3 +111,10 @@ pContent[7].textContent = siteContent["contact"]["email"];
 
 //footer
 pContent[8].textContent = siteContent["footer"]["copyright"];
+
+pContent.forEach(element => {
+  element.style.color = "grey";
+  element.style.backgroundColor = "lightblue";
+});
+
+
