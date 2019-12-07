@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Navigation Bar
+let navigationBar = document.querySelectorAll("a");
+navigationBar.forEach((element, i) => {
+  element.textContent = siteContent["nav"][`nav-item-${[i]}`];
+})
+
+const newLink = document.createElement('a');
+newLink.textContent = "End";
+newLink.style.color = "green";
+newLink.style.cursor = "pointer";
+newLink.style.backgroundColor = "lightblue";
+
+const parentElement = document.querySelector("nav");
+parentElement.appendChild(newLink);
+
+const newLink2 = document.createElement('a');
+newLink2.textContent = "Start";
+newLink2.style.color = "green";
+newLink2.style.cursor = "pointer";
+newLink2.style.backgroundColor = "lightblue";
+
+const parentElement2 = document.querySelector("nav");
+parentElement2.prepend(newLink2);
+
+navigationBar.forEach(element => {
+  element.style.color = 'green';
+  element.style.backgroundColor = "lightblue";
+});
+
+//Body
+
+let bodyImg = document.getElementById("cta-img");
+bodyImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let domText = document.querySelector("h1");
+domText.textContent = siteContent["cta"]["h1"];
+
+let button1 = document.querySelector("button");
+button1.textContent = siteContent["cta"]["button"];
+
+//Top Content
+let topContent = document.querySelectorAll("h4");
+topContent[0].textContent = siteContent["main-content"]["features-h4"];
+topContent[1].textContent = siteContent["main-content"]["about-h4"];
+topContent[2].textContent = siteContent["main-content"]["services-h4"];
+topContent[3].textContent = siteContent["main-content"]["product-h4"];
+topContent[4].textContent = siteContent["main-content"]["vision-h4"];
+topContent[5].textContent = siteContent["contact"]["contact-h4"];
+
+topContent.forEach(element => {
+  element.style.color = "green";
+});
+
+let mainImg = document.getElementById("middle-img");
+mainImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let pContent = document.querySelectorAll("p");
+pContent[0].textContent = siteContent["main-content"]["features-content"];
+pContent[1].textContent = siteContent["main-content"]["about-content"];
+pContent[2].textContent = siteContent["main-content"]["services-content"];
+pContent[3].textContent = siteContent["main-content"]["product-content"];
+pContent[4].textContent = siteContent["main-content"]["vision-content"];
+
+//Contact
+pContent[5].textContent = siteContent["contact"]["address"];
+pContent[6].textContent = siteContent["contact"]["phone"];
+pContent[7].textContent = siteContent["contact"]["email"];
+
+//footer
+pContent[8].textContent = siteContent["footer"]["copyright"];
+
+pContent.forEach(element => {
+  element.style.color = "grey";
+  element.style.backgroundColor = "lightblue";
+});
+
+
